@@ -5,6 +5,8 @@ const app = express();
 var bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 
+const db = require("./models");
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,12 +19,15 @@ app.use(bodyParser.json({ type: "application/json" }));
 // }
 app.use(express.static("public"));
 // Add routes, both API and view
+require("./routes/api/api-routes.js")(app);
 app.use(routes);
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewsnbarks");
 
 // Start the API server
+db.sequelize.sync({ force: true }).then(function() {
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
 });
