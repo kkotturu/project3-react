@@ -6,11 +6,16 @@ module.exports = function(app) {
 
  // GET route for getting all of the places
  app.get("/api/favorite/", function(req, res) {
-   db.savedSearch.findAll({})
+   db.savedSearch.findAll({
+     where: {
+       userID: req.body.userID
+     }
+   })
      .then(function(brewsandbarks) {
        res.json(brewsandbarks);
      });
  });
+
 
 
  // POST route for saving a new place
@@ -20,7 +25,8 @@ module.exports = function(app) {
      name: req.body.name,
      address: req.body.vicinity,
      rating: req.body.rating,
-     userID: req.body.userID
+     userID: req.body.userID,
+     googleID: req.body.googleID
     })
      .then(function(brewsandbarks) {
        res.json(brewsandbarks);
@@ -31,7 +37,8 @@ module.exports = function(app) {
  app.delete("/api/favorite/", function(req, res) {
    db.savedSearch.destroy({
      where: {
-       id: req.body.id
+       googleID: req.body.googleID,
+       userid: req.body.id
      }
    })
      .then(function(brewsandbarks) {
