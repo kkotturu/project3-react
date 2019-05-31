@@ -2,11 +2,9 @@ const path = require("path");
 const router = require("express").Router();
 const axios = require("axios");
 
-router.route('/signup')
-    .get(function (req, res) {
-        console.log('processing');
-        res.send('processing the login form!');
-    });
+// router.route("/api/favorite")
+//     .get(api-routes.findAll)
+//     .post(api-routes.create);
 
 router.post('/search', (req, res) => {
     console.log("Searching...");

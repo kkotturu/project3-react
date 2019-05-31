@@ -40,9 +40,9 @@ class App extends Component {
               <Button
                 bsStyle="primary"
                 className="btn-margin"
-                onClick={this.goTo.bind(this, 'signup')}
+                onClick={this.goTo.bind(this, 'SavedSearch')}
               >
-                Sign up
+                Saved Searches
             </Button>
               {
                 !isAuthenticated() && (

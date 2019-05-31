@@ -101,3 +101,7 @@ export default class Auth {
     return new Date().getTime() < expiresAt;
   }
 }
+
+export function getUserAud(){
+  return localStorage.getItem('userid')
+}

@@ -6,6 +6,8 @@ import Bnb from '../Results/Bnb';
 // const { API_KEY } = process.env
 // const API_URL = 'TBD'
 
+
+
 class Search extends Component {
   constructor(props) {
     super(props)
@@ -13,7 +15,8 @@ class Search extends Component {
       results: false,
       error: false,
       zip: '',
-      brewResults: null
+      brewResults: null,
+      barkResults: null
     }
     this.state.handleChange = this.handleChange.bind(this)
   }
@@ -64,7 +67,6 @@ class Search extends Component {
       }
     })
   }
-
   render() {
     return (
       <div>
@@ -81,7 +83,6 @@ class Search extends Component {
           }
 
         </form>
-
       </div>
     )
 

@@ -8,16 +8,17 @@ const Card = props => {
         <div className="card-height">
             <hr />
             {
-                localStorage.hasOwnProperty('isLoggedIn') ? <button type = "submit"><i className="fas fa-heart heart-icon"></i></button> : null
+                localStorage.hasOwnProperty('isLoggedIn') ?
+                    <button type="submit"><i className="fas fa-heart heart-icon">
+                    </i></button> : null
             }
-            
             <div className="card-result">Name: {props.name}</div>
 
             <div className="card-result">Address: {props.vicinity}</div>
 
             <div className="card-result">Rating: {props.rating}</div>
 
-            <div className="card-result">Open Now: {(props.open_now) ? 'Open Now' : 'Not Open Now'}</div>
+            <div className="card-result">Open Now: {(props.opening_hours) ? 'Yes' : 'No'}</div>
         </div>
     )
 }

@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 
 const db = require("./models");
@@ -19,11 +19,8 @@ app.use(bodyParser.json({ type: "application/json" }));
 // }
 app.use(express.static("public"));
 // Add routes, both API and view
-require("./routes/api/api-routes.js")(app);
+// app.require("./routes/api/api-routes.js");
 app.use(routes);
-
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/brewsnbarks");
 
 // Start the API server
 db.sequelize.sync({ force: true }).then(function() {
