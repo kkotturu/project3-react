@@ -4,14 +4,14 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-   "client-install": "npm install --prefix client",
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "nothing": "nothing",
-    "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node --ignore 'client/*'\" && \"npm run client\"",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && yarn install && yarn build",
+    "heroku-postbuild": "cd client && npm install  && npm run build"
   },
   "author": "",
   "license": "ISC",
