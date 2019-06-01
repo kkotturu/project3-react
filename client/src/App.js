@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
 import Logo from './Assets/Images/Logo.png';
 import Footer from './Footer/Footer';
 import Search from './Search/Search';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+
 
 class App extends Component {
   goTo(route) {
@@ -33,9 +36,12 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar fluid className="bnb-nav">
-          <Navbar.Header>
-            <img className="Logo" src={Logo} alt="Logo" />
+        <AppBar fluid className="bnb-nav">
+          <Toolbar>
+            <div>
+              <img className="Logo" src={Logo} alt="Logo" />
+            </div>
+
             <span className="btnLoc">
               <Button
                 bsStyle="primary"
@@ -69,8 +75,8 @@ class App extends Component {
                 )
               }
             </span>
-          </Navbar.Header>
-        </Navbar>
+          </Toolbar>
+        </AppBar>
         <Footer />
         <Search />
       </div >
@@ -79,3 +85,4 @@ class App extends Component {
 }
 
 export default App;
+

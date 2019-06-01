@@ -5,27 +5,15 @@ button.btn-margin {
   background-color:#c98520;
   color:white;
   font-family: 'Oxygen', sans-serif;
-  /* font-family:Georgia, 'Times New Roman', Times, serif; */
-  font-size: 26px;
+  font-size: 18px;
   cursor: pointer;
   margin-right: 10px;
   text-align: center;
-  position: relative;
-  top: 20px;
-  left: 335px;
-  /* float: right; */
+  left: 780px;
+  float: right;
   border: none;
   box-shadow: 2px 2px 6px rgb(51, 51, 51);
 }
-
-/* .title{
-  text-align: center; */
-  /* margin: 25px; */
-  /* font-family: 'Tangerine', serif;
-  font-size: 42px;
-  color:white;
-  display: inline;
-} */
 
 .navbar-default{
   background-color: #1871ac;
@@ -42,7 +30,6 @@ button.btn-margin {
 
 img.Logo {
   width: 300px;
-  position: relative;
   top: 2px;
   right: 330px;
 }

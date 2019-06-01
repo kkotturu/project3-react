@@ -1,7 +1,6 @@
 import React from "react";
 import "../Card/Card.css";
 
-
 const Card = props => {
     console.log(props.name)
     return (

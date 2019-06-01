@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../Home/Home.css'
-// import { Bnb } from "../Results/Bnb"
 
 class Home extends Component {
   login() {
