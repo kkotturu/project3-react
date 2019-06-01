@@ -8,7 +8,7 @@ const Card = props => {
             <hr />
             {
                 localStorage.hasOwnProperty('isLoggedIn') ?
-                    <button type="submit"><i className="fas fa-heart heart-icon">
+                    <button onClick={(e) => props.handleClick(e, props)}><i className="fas fa-heart heart-icon">
                     </i></button> : null
             }
             <div className="card-result">Name: {props.name}</div>
@@ -16,6 +16,7 @@ const Card = props => {
             <div className="card-result">Address: {props.vicinity}</div>
 
             <div className="card-result">Rating: {props.rating}</div>
+
 
             <div className="card-result">Open Now: {(props.opening_hours) ? 'Yes' : 'No'}</div>
         </div>

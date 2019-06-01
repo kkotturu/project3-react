@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Search.css';
 import Bnb from '../Results/Bnb';
+import TextField from '@material-ui/core/TextField';
 
 // const { API_KEY } = process.env
 // const API_URL = 'TBD'
@@ -68,15 +69,35 @@ class Search extends Component {
     })
   }
   render() {
+    // return (
+    //   <div>
+    //     <form >
+    //       <input
+    //         placeholder="Search for..."
+    //         value={this.state.zip}
+    //         onChange={this.handleChange}
+    //         className='input-style'
+    //       />
+
+    //       <p className="searchMessage">Please login to Save Search Results</p>
+    //       {this.state.brewResults &&
+    //         <Bnb brewResults={this.state.brewResults} barkResults={this.state.barkResults} />
+    //       }
+
+    //     </form>
+    //   </div>
+    // )
+
     return (
       <div>
-        <form >
-          <input
+        <form className="form-style">
+          <TextField
+            id="standard-search"
             placeholder="Search for..."
             value={this.state.zip}
             onChange={this.handleChange}
-            className='input-style'
-          />
+           />
+
           <p className="searchMessage">Please login to Save Search Results</p>
           {this.state.brewResults &&
             <Bnb brewResults={this.state.brewResults} barkResults={this.state.barkResults} />

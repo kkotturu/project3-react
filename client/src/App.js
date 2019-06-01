@@ -25,7 +25,6 @@ class App extends Component {
 
   componentDidMount() {
     const { renewSession } = this.props.auth;
-
     if (localStorage.getItem('isLoggedIn') === 'true') {
       renewSession();
     }
@@ -36,7 +35,7 @@ class App extends Component {
 
     return (
       <div>
-        <AppBar fluid className="bnb-nav">
+        <AppBar fluid className="bnb-nav" xs="12" sm="6" md="8" >
           <Toolbar>
             <div>
               <img className="Logo" src={Logo} alt="Logo" />
@@ -44,8 +43,10 @@ class App extends Component {
 
             <span className="btnLoc">
               <Button
+                id="savedBut"
                 bsStyle="primary"
                 className="btn-margin"
+                data-toggle="collapse"
                 onClick={this.goTo.bind(this, 'SavedSearch')}
               >
                 Saved Searches
@@ -56,6 +57,7 @@ class App extends Component {
                     id="qsLoginBtn"
                     bsStyle="primary"
                     className="btn-margin"
+                    data-toggle="collapse"
                     onClick={this.login.bind(this)}
                   >
                     Log In

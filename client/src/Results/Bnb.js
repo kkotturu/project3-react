@@ -29,7 +29,7 @@ class Bnb extends Component {
             <Card className="card-bg">
               <h3>Bark Places</h3>
               {barkResults ?
-                <CardContainer barkResults={barkResults} />
+                <CardContainer className="card-result" barkResults={barkResults} />
              : <h4></h4> }
             </Card>
           </Col>

@@ -13,3 +13,11 @@
 h3 {
     margin-left: 15px;
 }
+
+/* Responsive Adjustment for <450px */
+@media only screen and (max-width: 450px) {
+    .card-space {
+        margin-right: 50px;
+        margin-left: 12px; 
+    }
+}
