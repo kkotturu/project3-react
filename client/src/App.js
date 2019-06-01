@@ -6,9 +6,23 @@ import Search from './Search/Search';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import API from "./API";
+import Card from "./Card/Card";
 
 
 class App extends Component {
+  _handleClick = (e, obj) => {
+    e.preventDefault();
+     const user_obj = {
+      userId: localStorage.getItem('userid')
+    };
+    API.getAll(user_obj).then(res => {
+      console.log(res)
+    }).catch(err => {
+      return err
+    })
+  }
+
   goTo(route) {
     this.props.history.replace(`/${route}`)
     this.setState(localStorage.setItem('searchZip', ''))
@@ -47,7 +61,7 @@ class App extends Component {
                 bsStyle="primary"
                 className="btn-margin"
                 data-toggle="collapse"
-                onClick={this.goTo.bind(this, 'SavedSearch')}
+                onClick = {(e) => this._handleClick(e)}
               >
                 Saved Searches
             </Button>

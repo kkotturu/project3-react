@@ -4,8 +4,16 @@ import API from "../API";
 class CardContainer extends Component {
     _handleClick = (e, obj) => {
         e.preventDefault();
-        console.log(obj)
-        API.saveFavorite(obj).then(res => {
+        console.log(obj.vicinity)
+
+        const save_obj = {
+            name: obj.name,
+            address: obj.vicinity,
+            rating: obj.rating,
+            userId: localStorage.getItem('userid')
+        };
+
+        API.saveFavorite(save_obj).then(res => {
             console.log(res)
         }).catch(err => {
             return err
@@ -24,7 +32,7 @@ class CardContainer extends Component {
 
                 ))}
                 {barkResults && barkResults.map((card, i) => (
-                    <Card key={i} {...card} />
+                    <Card key={i} handleClick={this._handleClick} {...card} />
                 ))}
             </div>
         )

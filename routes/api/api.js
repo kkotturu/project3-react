@@ -1,10 +1,7 @@
 const path = require("path");
 const router = require("express").Router();
 const axios = require("axios");
-
-// router.route("/api/favorite")
-//     .get(api-routes.findAll)
-//     .post(api-routes.create);
+const db = require("../../models")
 
 router.post('/search', (req, res) => {
     console.log("Searching...");
@@ -37,6 +34,34 @@ router.post('/search', (req, res) => {
     };
 
 });
+
+
+router.post("/favorite", (req, res) => {
+    console.log(req.body)
+    db.savedSearch.create({
+        name: req.body.name,
+        address: req.body.address,
+        rating: req.body.rating,
+        userID: req.body.userId
+    })
+        .then(function (brewsandbarks) {
+            console.log("All gucci")
+            res.json(brewsandbarks);
+        });
+});
+
+
+router.post("/user/all", (req, res) => {
+    console.log(req.body)
+    db.savedSearch.findAll({
+        where: {
+            userID: req.body.userId
+        }
+    })
+        .then(function (brewsandbarks) {
+            res.json(brewsandbarks);
+        });
+})
 
 
 
