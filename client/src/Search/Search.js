@@ -73,8 +73,6 @@ class Search extends Component {
             value={this.state.zip}
             onChange={this.handleChange}
            />
-
-          <p className="searchMessage">Please login to Save Search Results</p>
           {this.state.brewResults &&
             <Bnb brewResults={this.state.brewResults} barkResults={this.state.barkResults} />
           }

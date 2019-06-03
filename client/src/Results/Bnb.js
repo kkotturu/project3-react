@@ -4,14 +4,13 @@ import Col from "./Col";
 import CardContainer from '../Card/CardContainer';
 import { Card } from "react-simple-card";
 import '../Results/Bnb.css';
-import SavedSearch from "../Pages/SavedSearch";
 
 class Bnb extends Component {
-  
+
   componentDidMount() {
     console.log("BNB Loaded");
   }
-  
+
   render() {
     const { brewResults, barkResults } = this.props;
     console.log(this.props);
@@ -20,10 +19,11 @@ class Bnb extends Component {
         <Row >
           <Col size='sm-5'>
             <Card className="card-bg">
+
               <h3>Brew Places</h3>
-              {brewResults ? 
+              {brewResults ?
                 <CardContainer className="card-result" brewResults={brewResults} />
-             : <h4></h4> }
+                : <h4></h4>}
             </Card>
           </Col>
           <Col size="sm-5">
@@ -31,13 +31,9 @@ class Bnb extends Component {
               <h3>Bark Places</h3>
               {barkResults ?
                 <CardContainer className="card-result" barkResults={barkResults} />
-             : <h4></h4> }
+                : <h4></h4>}
             </Card>
-            <Card>
-            {/* <SavedSearch/> */}
-            </Card>
-     
-          </Col>
+             </Col>
         </Row>
       </div>
     )

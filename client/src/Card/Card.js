@@ -7,9 +7,9 @@ const Card = props => {
         <div className="card-height">
             <hr />
             {
-                localStorage.hasOwnProperty('isLoggedIn') ?
-                    <button onClick={(e) => props.handleClick(e, props)}><i className="fas fa-heart heart-icon">
-                    </i></button> : null
+                localStorage.hasOwnProperty('isLoggedIn')  ?
+                    <button onClick={(e) => props.handleClick(e, props)}><i className="fas fa-heart heart-icon" >
+                    </i>Click to Save</button> : null
             }
             <div className="card-result">Name: {props.name}</div>
 

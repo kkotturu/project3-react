@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Footer/Footer.css'
+import './Footer.css'
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 
 const Footer = () => {

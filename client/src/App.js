@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Logo from './Assets/Images/Logo.png';
-import Footer from './Card/Footer/Footer';
+import Footer from './Footer/Footer';
 import Search from './Search/Search';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -87,8 +87,9 @@ class App extends Component {
                   >
                     Log In
                   </Button>
+                  
                 )
-              }
+             }
               {
                 isAuthenticated() && (
                   <Button
@@ -104,7 +105,7 @@ class App extends Component {
             </span>
           </Toolbar>
         </AppBar>
-        <Footer />
+       <Footer />
         {!this.state.saved_state ? <Search /> : <SavedSearch results={this.state.results} />}
       </div >
     )
