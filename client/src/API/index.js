@@ -7,5 +7,9 @@ export default {
 
     getAll: (payload) => {
         return axios.post("/api/user/all", payload)
+    },
+
+    deleteSavedSearch:function(id){
+        return axios.delete("/api/user/"+ id)
     }
 }

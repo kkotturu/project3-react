@@ -3,7 +3,8 @@ import Row from "./Row";
 import Col from "./Col";
 import CardContainer from '../Card/CardContainer';
 import { Card } from "react-simple-card";
-import '../Results/Bnb.css'
+import '../Results/Bnb.css';
+import SavedSearch from "../Pages/SavedSearch";
 
 class Bnb extends Component {
   
@@ -32,6 +33,10 @@ class Bnb extends Component {
                 <CardContainer className="card-result" barkResults={barkResults} />
              : <h4></h4> }
             </Card>
+            <Card>
+            {/* <SavedSearch/> */}
+            </Card>
+     
           </Col>
         </Row>
       </div>

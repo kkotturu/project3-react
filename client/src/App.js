@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 import Logo from './Assets/Images/Logo.png';
-import Footer from './Footer/Footer';
+import Footer from './Card/Footer/Footer';
 import Search from './Search/Search';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import API from "./API";
-import Card from "./Card/Card";
-
+import SavedSearch from './Pages/SavedSearch';
 
 class App extends Component {
+  state = {
+    results: [],
+    saved_state: false
+  }
+
   _handleClick = (e, obj) => {
     e.preventDefault();
-     const user_obj = {
+    const user_obj = {
       userId: localStorage.getItem('userid')
     };
     API.getAll(user_obj).then(res => {
+      this.setState({
+        saved_state: !this.state.saved_state,
+        results: res.data
+      })
       console.log(res)
     }).catch(err => {
       return err
@@ -56,15 +64,18 @@ class App extends Component {
             </div>
 
             <span className="btnLoc">
-              <Button
-                id="savedBut"
-                bsStyle="primary"
-                className="btn-margin"
-                data-toggle="collapse"
-                onClick = {(e) => this._handleClick(e)}
-              >
-                Saved Searches
+              {
+                isAuthenticated() && (
+                  <Button
+                    id="savedBut"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    data-toggle="collapse"
+                    onClick={(e) => this._handleClick(e)}
+                >
+                   {!this.state.saved_state ? "Saved Searches" : "Otherrr"}
             </Button>
+                )}
               {
                 !isAuthenticated() && (
                   <Button
@@ -94,9 +105,9 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Footer />
-        <Search />
+        {!this.state.saved_state ? <Search /> : <SavedSearch results={this.state.results} />}
       </div >
-    );
+    )
   }
 }
 

@@ -59,7 +59,14 @@ img.Logo {
 button#qsLoginBtn {
   position: absolute;
   top: 110px;
-  left: 10%;
+  left: 35%;
+  margin-right: 10px;
+}
+
+button#qsLogoutBtn {
+  position: absolute;
+  top: 110px;
+  left: 5%;
   margin-right: 10px;
 }
 

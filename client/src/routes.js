@@ -7,6 +7,7 @@ import Auth from './Auth/Auth';
 import history from './history';
 
 
+
 const auth = new Auth();
 
 const handleAuthentication = ({ location }) => {
@@ -20,7 +21,6 @@ export const makeMainRoutes = () => {
     <Router history={history}>
       <div>
         <Route path="/" render={(props) => <App auth={auth} {...props} />} />
-        {/* <Route component={SavedSearchCard} path="/savedsearch" /> */}
         <Route path="/callback" render={(props) => {
           handleAuthentication(props);
           return <Callback {...props} />

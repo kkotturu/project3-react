@@ -13,12 +13,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: "application/json" }));
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 app.use(express.static("public"));
-// Add routes, both API and view
-// app.require("./routes/api/api-routes.js");
 app.use(routes);
 
 // Start the API server

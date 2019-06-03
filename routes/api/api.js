@@ -59,9 +59,11 @@ router.post("/user/all", (req, res) => {
         }
     })
         .then(function (brewsandbarks) {
+            console.log("Saved Search button is clicked")
             res.json(brewsandbarks);
         });
 })
+
 
 
 

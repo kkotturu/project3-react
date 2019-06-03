@@ -18,6 +18,7 @@ const Card = props => {
             <div className="card-result">Rating: {props.rating}</div>
 
             <div className="card-result">Open Now: {(props.opening_hours) ? 'Yes' : 'No'}</div>
+            {props.children}
         </div>
     )
 }

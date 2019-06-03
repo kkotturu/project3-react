@@ -10,8 +10,7 @@
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
-    "build": "cd client && yarn install && yarn build",
-    "heroku-postbuild": "cd client && npm install  && npm run build"
+    "heroku-postbuild": "NODE_ENV=production"
   },
   "author": "",
   "license": "ISC",
