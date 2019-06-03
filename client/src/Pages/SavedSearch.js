@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import API from "../API";
+import './SavedSearch.css';
 
 class SavedSearch extends Component {
 
@@ -26,7 +27,7 @@ class SavedSearch extends Component {
 
     render() {
         return (
-            <p>
+            <p className="resultsStyle">
                 {this.props.results.map(result => {
                     return (
                         <Card key={result.id} vicinity={result.address} {...result} />

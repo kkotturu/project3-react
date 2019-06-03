@@ -33,6 +33,37 @@ img.Logo {
   right: 330px;
 }
 
+/* Responsive Adjustment for >1400x */
+@media only screen and (min-width: 1400px) {
+  img.Logo {
+    width: 300px;
+    position: relative;
+    left: 20%;
+  }
+  
+  button#qsLoginBtn {
+    position: absolute;
+    top: 25%;
+    left: 90%;
+    margin-right: 10px;
+  }
+  
+  button#qsLogoutBtn {
+    position: absolute;
+    top: 25%;
+    left: 80%;
+    margin-right: 10px;
+  }
+  
+  button#savedBut {
+    position: absolute;
+    top: 25%;
+    left: 87%;
+    margin-right: 10px;
+  }
+}
+
+
 /* Responsive Adjustment for <1200px */
 @media only screen and (max-width: 1200px) {
   button.btn-margin {
@@ -49,31 +80,31 @@ img.Logo {
   
 /* Responsive Adjustment for <450px */
 @media only screen and (max-width: 450px) {
-/* img.Logo {
+img.Logo {
   width: 300px;
   position: relative;
-  left: 8%;
-} */
+  left: 10%;
+}
 
 
 button#qsLoginBtn {
   position: absolute;
   top: 110px;
-  left: 35%;
+  left: 40%;
   margin-right: 10px;
 }
 
 button#qsLogoutBtn {
   position: absolute;
   top: 110px;
-  left: 5%;
+  left: 25%;
   margin-right: 10px;
 }
 
 button#savedBut {
   position: absolute;
   top: 110px;
-  left: 40%;
+  left: 55%;
   margin-right: 10px;
-}
+  }
 }

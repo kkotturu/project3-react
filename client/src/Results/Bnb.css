@@ -1,7 +1,8 @@
 .card-bg {
     opacity: .75;
+    margin-top: 10%;
     margin-right: 10px;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 .card-space {
@@ -14,8 +15,20 @@ h3 {
     margin-left: 15px;
 }
 
+/* Responsive Adjustment for >1400x */
+@media only screen and (min-width: 1400px) {
+    .card-bg {
+        margin-left: 20px;
+    }
+}
+
 /* Responsive Adjustment for <450px */
 @media only screen and (max-width: 450px) {
+    /* .card-bg {
+        margin-right: 10px;
+        margin-left: 20px;
+    } */
+    
     .card-space {
         margin-right: 50px;
         margin-left: 12px; 

@@ -72,9 +72,9 @@ class App extends Component {
                     className="btn-margin"
                     data-toggle="collapse"
                     onClick={(e) => this._handleClick(e)}
-                >
-                   {!this.state.saved_state ? "Saved Searches" : "Otherrr"}
-            </Button>
+                  >
+                    {!this.state.saved_state ? "Saved" : "Home"}
+                  </Button>
                 )}
               {
                 !isAuthenticated() && (
@@ -87,9 +87,9 @@ class App extends Component {
                   >
                     Log In
                   </Button>
-                  
+
                 )
-             }
+              }
               {
                 isAuthenticated() && (
                   <Button
@@ -105,7 +105,7 @@ class App extends Component {
             </span>
           </Toolbar>
         </AppBar>
-       <Footer />
+        <Footer />
         {!this.state.saved_state ? <Search /> : <SavedSearch results={this.state.results} />}
       </div >
     )

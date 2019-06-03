@@ -22,3 +22,11 @@ button {
 div.card-height {
     padding-bottom: 5%;
 }
+
+/* Responsive Adjustment for <450px */
+/* @media only screen and (max-width: 450px) {
+    div.card-height {
+      width: 80%;
+      margin: 180px 10% 0 10%;
+    }
+  } */

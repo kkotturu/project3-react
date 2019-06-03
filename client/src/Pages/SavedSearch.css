@@ -1,0 +1,15 @@
+p.resultsStyle {
+    background-color: white;
+    opacity: .75;
+    color: rgb(22, 21, 21);
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* Responsive Adjustment for <450px */
+@media only screen and (max-width: 450px) {
+    p.resultsStyle {
+      width: 100%;
+      margin: 180px 0 0 20%;
+    }
+  }
