@@ -1,6 +1,6 @@
 # Project 3: React App
 ## Brews &amp; Barks
-<<<<<<< HEAD
+
 
 Brews & Barks is an application for beer-drinking dog lovers. Brews & Barks allows users to search for dog-friendly breweries and activites by location and save the results.
 
