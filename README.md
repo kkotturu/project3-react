@@ -20,6 +20,7 @@ This application utilizes:
 Clone the repository to your machine. Run npm install and set up a local database by adding your database name and password in the config.json file, located in the client folder.
 
 Application is hosted on Heroku here: (to be added)
+
 Google Slides presentation available here: <https://docs.google.com/presentation/d/e/2PACX-1vSn-mJQmJoRR7TPECK_FF76v1rw2yg-D8343KE9-FGsp8EvuubqBQB7hS0ERDduFjDsha-jCNlrhhzH/pub?start=true&loop=true&delayms=5000>
 
 ### Directions:
