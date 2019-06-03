@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import API from "../API";
-import { Link } from "react-router-dom";
 
 class SavedSearch extends Component {
 
